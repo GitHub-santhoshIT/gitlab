@@ -16,6 +16,5 @@ build_a:
     - pwd
     - echo "This job builds something." >> sai.txt
     - cat sai.txt
-    - RUN apt update 
-    - RUN apt-get install docker.io
+    - apt update && apt-get install docker.io
     - Docker --version
