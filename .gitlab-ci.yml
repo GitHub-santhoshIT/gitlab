@@ -23,5 +23,6 @@ raju:
 sai:
   stage : test
   script:
-    - RUN apt-get update
+    - export IMAGE_NAME=ubuntuk8s/ubuntu-terraform:latest
+    - docker build -t $IMAGE_NAME 
     - echo "done"
