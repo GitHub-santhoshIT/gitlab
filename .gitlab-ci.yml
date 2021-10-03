@@ -22,7 +22,7 @@ deploy_production:
         - chmod 700 ~/.ssh
     script:
         # Connecting to the server using SSH and executing commands like pulling updates to the cloned repo
-        - ssh -o StrictHostKeyChecking=no username@host_ip_address "cd /project && git pull"
+        - ssh -o StrictHostKeyChecking=no ubuntu@172.20.0.1 "cd /project && git pull"
         # -o StrictHostKeyCheking=no is to disable strict host key checking in SSH
     only:
         - main
