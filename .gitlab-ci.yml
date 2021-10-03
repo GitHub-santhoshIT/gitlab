@@ -5,15 +5,11 @@
 # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
 
 # Includes deployment pipeline only
-tages:
-    - docker
 stages:
-    - deploy
+    - test
 
-
-deploy_production:
-    stage: deploy
+devlop:
+    stage:
+        -test
     script:
-        echo"hello"
-    only:
-        - main
+        - echo "hello"
