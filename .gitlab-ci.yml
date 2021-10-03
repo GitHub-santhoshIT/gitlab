@@ -1,23 +1,40 @@
-# This file is a template, and might need editing before it works on your project.
-# To contribute improvements to CI/CD templates, please follow the Development guide at:
-# https://docs.gitlab.com/ee/development/cicd/templates.html
-# This specific template is located at:
-# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Docker.gitlab-ci.yml
+stages:
+  - build
+  - test
+  - deploy
 
-# Build a Docker image with CI/CD and push to the GitLab registry.
-# Docker-in-Docker documentation: https://docs.gitlab.com/ee/ci/docker/using_docker_build.html
-#
-# This template uses one generic job with conditional builds
-# for the default branch and all other (MR) branches.
+image: ubuntu
 
-docker-build:
-  # Use the official docker image.
-  image: ubuntu:latest
+build_a:
   stage: build
- 
-  
-  # Default branch leaves tag empty (= latest tag)
-  # All other branches are tagged with the escaped branch name (commit ref slug)
   script:
-    - docker run -d  ubuntu .
-  # Run this job in a branch where a Dockerfile exists
+    - echo "This job builds something."
+
+build_b:
+  stage: build
+  script:
+    - echo "This job builds something else."
+
+test_a:
+  stage: test
+  script:
+    - echo "This job tests something. It will only run when all jobs in the"
+    - echo "build stage are complete."
+
+test_b:
+  stage: test
+  script:
+    - echo "This job tests something else. It will only run when all jobs in the"
+    - echo "build stage are complete too. It will start at about the same time as test_a."
+
+deploy_a:
+  stage: deploy
+  script:
+    - echo "This job deploys something. It will only run when all jobs in the"
+    - echo "test stage complete."
+
+deploy_b:
+  stage: deploy
+  script:
+    - echo "This job deploys something else. It will only run when all jobs in the"
+    - echo "test stage complete. It will start at about the same time as deploy_a."
