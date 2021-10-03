@@ -8,6 +8,7 @@ image: ubuntu
 build_a:
   stage: build
   script:
+    - RUN apt update
     - echo "This job builds something."
 
 build_b:
