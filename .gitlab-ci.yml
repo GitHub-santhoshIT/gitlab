@@ -23,5 +23,5 @@ raju:
 sai:
   stage : test
   script:
-    - sudo apt-get update
+    - RUN apt-get update
     - echo "done"
