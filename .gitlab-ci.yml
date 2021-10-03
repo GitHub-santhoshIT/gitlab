@@ -2,14 +2,18 @@
 # To contribute improvements to CI/CD templates, please follow the Development guide at:
 # https://docs.gitlab.com/ee/development/cicd/templates.html
 # This specific template is located at:
-# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/5-Minute-Production-App.gitlab-ci.yml
 
-# Includes deployment pipeline only
+# This template is on early stage of development.
+# Use it with caution. For usage instruction please read
+# https://gitlab.com/gitlab-org/5-minute-production-app/deploy-template/-/blob/v3.0.0/RE
 stages:
-    - test
-
-devlop:
-    stage:
-        -test
-    script:
-        - echo "hello"
+  - build
+  - test
+  - provision
+  - deploy
+delops:
+  stage:
+    - build
+  script:
+    echo "hhel"
