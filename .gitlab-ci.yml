@@ -6,14 +6,17 @@
 
 # This template is on early stage of development.
 # Use it with caution. For usage instruction please read
-# https://gitlab.com/gitlab-org/5-minute-production-app/deploy-template/-/blob/v3.0.0/RE
+# https://gitlab.com/gitlab-org/5-minute-production-app/deploy-template/-/blob/v3.0.0/README.md
+
+
 stages:
   - build
   - test
   - provision
   - deploy
-delops:
-  stage:
-    - build
+  - destroy
+
+raju:
+  stage: build
   script:
-    echo "hhel"
+    - echo "hello"
