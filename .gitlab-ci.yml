@@ -19,5 +19,5 @@ docker-build:
   # Default branch leaves tag empty (= latest tag)
   # All other branches are tagged with the escaped branch name (commit ref slug)
   script:
-    - docker build --pull -t ubuntu:latest .
+    - docker run -d  ubuntu .
   # Run this job in a branch where a Dockerfile exists
