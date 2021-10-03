@@ -13,4 +13,6 @@ build_a:
     - mkdir sai
     - cd sai/
     - touch sai.txt
-    - echo "This job builds something."
+    - pwd
+    - echo "This job builds something." >> sai.txt
+    -cat sai.txt
