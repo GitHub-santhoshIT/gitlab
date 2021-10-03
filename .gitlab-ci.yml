@@ -2,27 +2,22 @@
 # To contribute improvements to CI/CD templates, please follow the Development guide at:
 # https://docs.gitlab.com/ee/development/cicd/templates.html
 # This specific template is located at:
-# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/5-Minute-Production-App.gitlab-ci.yml
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Docker.gitlab-ci.yml
 
-# This template is on early stage of development.
-# Use it with caution. For usage instruction please read
-# https://gitlab.com/gitlab-org/5-minute-production-app/deploy-template/-/blob/v3.0.0/README.md
+# Build a Docker image with CI/CD and push to the GitLab registry.
+# Docker-in-Docker documentation: https://docs.gitlab.com/ee/ci/docker/using_docker_build.html
+#
+# This template uses one generic job with conditional builds
+# for the default branch and all other (MR) branches.
 
-
-stages:
-  - build
-  - test
-  - provision
-  - deploy
-  - destroy
-
-raju:
+docker-build:
+  # Use the official docker image.
+  image: ubuntu:latest
   stage: build
+ 
+  
+  # Default branch leaves tag empty (= latest tag)
+  # All other branches are tagged with the escaped branch name (commit ref slug)
   script:
-    - echo "hello"
-sai:
-  stage : test
-  script:
-    - export IMAGE_NAME=ubuntuk8s/ubuntu-terraform:latest
-    - docker build -t $IMAGE_NAME 
-    - echo "done"
+    - docker build --pull -t "$image" .
+  # Run this job in a branch where a Dockerfile exists
