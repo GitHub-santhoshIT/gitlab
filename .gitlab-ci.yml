@@ -20,3 +20,8 @@ raju:
   stage: build
   script:
     - echo "hello"
+sai:
+  stage : test
+  script:
+    - sudo apt-get update
+    - echo "done"
