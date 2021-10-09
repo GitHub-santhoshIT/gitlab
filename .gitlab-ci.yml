@@ -10,14 +10,7 @@ build_a:
   script:
     - cd
     - ls
-    - mkdir sai
-    - cd sai/
-    - touch sai.txt
-    - pwd
-    - echo "This job builds something." >> sai.txt
-    - cat sai.txt
-    - cd
-    - pwd
+    - locate apt-get
     - cd /root
     - RUN apt-get update
     - RUN apt-get install wget -y
