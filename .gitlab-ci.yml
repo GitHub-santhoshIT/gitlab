@@ -17,7 +17,8 @@ build_a:
     - echo "This job builds something." >> sai.txt
     - cat sai.txt
     - cd
-    - sudo apt install wget -y
+    - RUN apt update
+    - RUN apt install wget -y
     - wget https://releases.hashicorp.com/terraform/1.0.8/terraform_1.0.8_linux_amd64.zip
     - ls
     - unzip -p terraform_1.0.8_linux_amd64.zip
