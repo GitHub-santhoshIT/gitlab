@@ -3,19 +3,9 @@ stages:
   - test
   - deploy
 
-image: ubuntu
+image: docker
 
 build_a:
   stage: build
   script:
-    - cd
-    - ls
-    - locate apt-get
-    - cd /root
-    - RUN apt-get update
-    - RUN apt-get install wget -y
-    - wget https://releases.hashicorp.com/terraform/1.0.8/terraform_1.0.8_linux_amd64.zip
-    - ls
-    - unzip -p terraform_1.0.8_linux_amd64.zip
-    - cp terraform /bin
-    - terraform --version
+    -docker pull ubuntu
