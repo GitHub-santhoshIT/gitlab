@@ -8,4 +8,4 @@ image: docker
 build_a:
   stage: build
   script:
-    -.Dockerfile
+    -$Dockerfile
