@@ -3,7 +3,7 @@ stages:
   - test
   - deploy
 
-image: ubuntu:latest
+image: ubuntu
 
 build_a:
   stage: build
