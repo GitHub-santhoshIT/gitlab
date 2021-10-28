@@ -12,7 +12,6 @@ build_a:
     - apt search docker.io
     - apt install docker.io -y
     - docker --version 
-    - systemctl start docker
     - docker pull owasp/zap2docker-stable
     - docker images
     - docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained \ --start-options '-config api.disablekey=true' https://www.google.com
