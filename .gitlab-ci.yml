@@ -13,5 +13,5 @@ build_a:
   script:
     - docker --version
     - docker images
-    - docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained --start-options '-config api.disablekey=true' https://www.engro.io
+    - docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained --start-options '-config api.disablekey=true' -s xss "http://www.engro.io/"
 
