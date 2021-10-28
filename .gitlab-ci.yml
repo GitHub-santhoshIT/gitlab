@@ -3,16 +3,11 @@ stages:
   - test
   - deploy
   - prod
-image: ubuntu
+image: docker:latest
 
 build_a:
   stage: build
   script:
-    - apt update -y
-    - apt search docker.io
-    - apt install docker.io -y
-    - systemctl enable docker.io
-    - systemctl start docker.io
     - docker --version 
     - docker pull owasp/zap2docker-stable
     - docker images
