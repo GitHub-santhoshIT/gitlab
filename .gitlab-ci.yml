@@ -3,7 +3,7 @@ stages:
   - test
   - deploy
   - prod
-image: docker:latest
+image: docker
 
 build_a:
   stage: build
