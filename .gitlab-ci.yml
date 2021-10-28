@@ -9,6 +9,6 @@ build_a:
   stage: build
   script:
     - docker --version 
-    - docker pull nginx
+    - docker pull nginx:latest
     - docker images
     - docker run -i owasp/zap2docker-tests:latest zap-cli quick-scan --self-contained \ --start-options '-config api.disablekey=true' https://www.google.com
