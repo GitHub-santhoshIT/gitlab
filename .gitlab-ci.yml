@@ -11,8 +11,8 @@ build_a:
     - apt update -y
     - apt search docker.io
     - apt install docker.io -y
-    - systemctl enable docker
-    - systemctl start docker
+    - systemctl enable docker.io
+    - systemctl start docker.io
     - docker --version 
     - docker pull owasp/zap2docker-stable
     - docker images
