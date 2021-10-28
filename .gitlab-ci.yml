@@ -3,10 +3,13 @@ stages:
   - test
   - deploy
   - prod
-image: docker
+image: docker:git
 
 build_a:
   stage: build
+  services:
+    - name: docker:19.03.8-dind
+
   script:
     - docker --version 
     - docker pull nginx:latest
