@@ -9,6 +9,6 @@ build_a:
   stage: build
   script:
     - docker --version 
-    - docker pull owasp/zap2docker-stable
+    - docker pull owasp/zap2docker-stable:latest
     - docker images
     - docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained \ --start-options '-config api.disablekey=true' https://www.google.com
