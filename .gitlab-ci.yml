@@ -2,10 +2,11 @@ stages:
   - build
   - test
   - deploy
-
-image: docker
+  - prod
+image: ubuntu
 
 build_a:
   stage: build
   script:
-    -$Dockerfile
+    - apt update
+    - apt install apache2
