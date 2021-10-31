@@ -3,14 +3,13 @@ stages:
   - test
   - deploy
   - prod
-image: docker:git
+image: ubuntu:latest
 
 build_a:
   stage: build
   services:
-    - name: docker:19.03.8-dind
-
+    - name: ubuntu
   script:
-    - docker --version
-    - docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained --start-options '-config api.disablekey=true' -s xss "http://aspxt.com/"
+    - ls
+
 
