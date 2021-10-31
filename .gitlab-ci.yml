@@ -17,6 +17,7 @@ build_a:
     - wget https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip
     - ls
     - unzip terraform_0.12.24_linux_amd64.zip
+    - ls
     - cd /terraform_0.12.24_linux_amd64
     - mv terraform /usr/local/bin
     - terraform --version
