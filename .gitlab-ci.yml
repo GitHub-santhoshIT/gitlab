@@ -11,5 +11,8 @@ build_a:
     - name: ubuntu
   script:
     - ls
+    - apt-get update
+    - apt-get install docker.io
+    - docker --version 
 
 
