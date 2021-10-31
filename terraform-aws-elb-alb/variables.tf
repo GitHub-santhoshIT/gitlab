@@ -12,7 +12,7 @@ variable "instance_type" {
 }
 variable "key_name" {
   type    = "string"
-  default = "ec2-demo"
+  default = "kittu"
 }
 
 variable "cidr" {
