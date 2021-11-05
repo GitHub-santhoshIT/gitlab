@@ -23,6 +23,7 @@ build_a:
     - cd terraform-aws-elb-alb/
     - terraform init --backend-config="access_key=$AWS_ACCESS_KEY_ID" --backend-config="secret_key=$AWS_SECRET_ACCESS_KEY"
     - terraform apply --auto-approve -no-color
+    - terraform destory --auto-approve -no-color
 #    - terraform taint module.image_dev_content.null_resource.push
 #    - terraform taint module.image_dev_frontend.null_resource.push
 #    - terraform taint module.image_dev_masterdata.null_resource.push
